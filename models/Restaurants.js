@@ -40,7 +40,7 @@ Restaurants.init(
   }, 
   {
     sequelize,
-    timestamps: false,
+    timestamps: true,  //need this to have timestamp/trans history
     freezeTableName: true,
     underscored: true,
     modelName: 'restaurants'   //lowercase for modelname only

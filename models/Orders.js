@@ -56,7 +56,7 @@ Orders.init(
   }, 
   {
     sequelize,
-    timestamps: false,
+    timestamps: true,
     freezeTableName: true,
     underscored: true,
     modelName: 'orders'   //lowercase for modelname only

@@ -64,7 +64,7 @@ Customers.init(
   }, 
   {
     sequelize,
-    timestamps: false,
+    timestamps: true,
     freezeTableName: true,
     underscored: true,
     modelName: 'customers'   //lowercase for modelname only

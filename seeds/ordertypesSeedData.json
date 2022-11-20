@@ -1,0 +1,26 @@
+[
+  {
+    "index": 1,
+    "restaurant_id": 1,
+    "order_type_name": "online",
+    "comments": "",
+    ""
+  },
+  {
+    "location_name": "Paris"
+  },
+  {
+    "location_name": "Pismo Beach"
+  },
+  {
+    "location_name": "Miami"
+  },
+  {
+    "location_name": "Austin"
+  }
+]
+
+
+1,1,"online",,11/20/2022 1:26:14,11/20/2022 1:26:14,"alexis","alexis"
+2,1,"phone",,11/20/2022 1:26:34,11/20/2022 1:26:34,"alexis","alexis"
+3,1,"in-person",,11/20/2022 1:26:50,11/20/2022 1:26:50,"alexis","alexis"
