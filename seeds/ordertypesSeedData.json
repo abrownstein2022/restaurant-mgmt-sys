@@ -1,0 +1,14 @@
+[
+  {
+    "restaurant_id": 1,
+    "order_type_name": "online"
+  },
+  {
+    "restaurant_id": 1,
+    "order_type_name": "phone"
+  },
+  {
+    "restaurant_id": 1,
+    "order_type_name": "in-person"
+  }
+]
