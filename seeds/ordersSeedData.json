@@ -1,18 +1,15 @@
 [
   {
-    "index": 1,
     "order_type_id": 1,
     "customer_id": 2,
     "order_notes": "Thanks for your order!"
   },
   {
-    "index": 2,
     "order_type_id": 3,
     "customer_id": 1,
     "order_notes": ""
   },
   {
-    "index": 3,
     "order_type_id": 2,
     "customer_id": 3,
     "order_notes": "Pick up in 45 minutes"

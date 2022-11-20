@@ -1,6 +1,5 @@
 [
   {
-    "index": 1,
     "restaurant_id": 1,
     "customer_first_name": "Mary",
     "customer_last_name": "Smith",
@@ -10,7 +9,6 @@
     "customer_password": "1234"
   },
   {
-    "index": 2,
     "restaurant_id": 1,
     "customer_first_name": "Joe",
     "customer_last_name": "Gerson",
@@ -20,7 +18,6 @@
     "customer_password": "4444"
   },
   {
-    "index": 3,
     "restaurant_id": 1,
     "customer_first_name": "Chuck",
     "customer_last_name": "Jones",

@@ -1,21 +1,17 @@
 [
   {
-    "index": 1,
     "restaurant_id": 1,
     "item_type_name": "entree"
   },
   {
-    "index": 2,
     "restaurant_id": 1,
     "item_type_name": "side"
   },
   {
-    "index": 3,
     "restaurant_id": 1,
     "item_type_name": "beverage"
-  }
+  },
   {
-    "index": 4,
     "restaurant_id": 1,
     "item_type_name": "dessert"
   }

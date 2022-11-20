@@ -1,16 +1,13 @@
 [
   {
-    "index": 1,
     "restaurant_id": 1,
     "order_type_name": "online"
   },
   {
-    "index": 2,
     "restaurant_id": 1,
     "order_type_name": "phone"
   },
   {
-    "index": 3,
     "restaurant_id": 1,
     "order_type_name": "in-person"
   }

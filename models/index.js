@@ -4,13 +4,13 @@
 //simpllfies developer experience for other developers who need to use this data
 //connects all the table js files with associations
 
-import Restaurants from './Restaurants';
-import OrderTypes from './OrderTypes';
-import ItemTypes from './ItemTypes';
-import Customers from './Customers';
-import Items from './Items';
-import Orders from './Orders';
-import OrderItems from './OrderItems';
+import Restaurants from './Restaurants.js';
+import OrderTypes from './OrderTypes.js';
+import ItemTypes from './ItemTypes.js';
+import Customers from './Customers.js';
+import Items from './Items.js';
+import Orders from './Orders.js';
+import OrderItems from './OrderItems.js';
 
 // Define a restaurant as having many customers, thus creating a foreign key in the customers table
 Restaurants.hasMany(Customers, {

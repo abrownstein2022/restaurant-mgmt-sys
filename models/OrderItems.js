@@ -1,12 +1,12 @@
 // const { Model, DataTypes } = require('sequelize');
 // const sequelize = require('../config/connection');
 import { Model, DataTypes } from 'sequelize';
-import sequelize from '../config/connection';
+import sequelize from '../config/connection.js';
 
 /**
  * create our OrderItems model
 */
-class OrdeOrderItemsrs extends Model {}  
+class OrderItems extends Model {}  
 
 // create fields/columns for Restaurants model
 OrderItems.init(

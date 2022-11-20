@@ -1,7 +1,7 @@
 // const { Model, DataTypes } = require('sequelize');
 // const sequelize = require('../config/connection');
 import { Model, DataTypes } from 'sequelize';
-import sequelize from '../config/connection';
+import sequelize from '../config/connection.js';
 
 /**
  * create our Customers model
