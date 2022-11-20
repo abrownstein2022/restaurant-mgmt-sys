@@ -4,42 +4,38 @@ import { Model, DataTypes } from 'sequelize';
 import sequelize from '../config/connection';
 
 /**
- * create our Orders model
+ * create our OrderItems model
 */
-class Orders extends Model {}  
+class OrdeOrderItemsrs extends Model {}  
 
 // create fields/columns for Restaurants model
-Orders.init(
+OrderItems.init(
   {
-    order_id: {
+    order_item_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true
     },
-    order_type_id: {
+    order_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'ordertypes',
-        key: 'order_type_id',
+        model: 'orders',
+        key: 'order_id',
         unique: false
       }
     },
-    customer_id: {
+    item_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'customers',
-        key: 'customer_id',
+        model: 'items',
+        key: 'item_id',
         unique: false
       }
     }, 
-    order_date: {
-      type: DataTypes.DATE,
-      defaultValue: DataTypes.NOW  //built-in function/method
-    },
-    order_notes: {
-      type: DataTypes.STRING,
-      allowNull: true
+    quantity: {
+      type: DataTypes.INTEGER,
+      defaultValue: 1  
     },
     comments: {
       type: DataTypes.STRING,
@@ -59,9 +55,9 @@ Orders.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'orders'   //lowercase for modelname only
+    modelName: 'orderitems'   //lowercase for modelname only
   }
 );
 
-//module.exports = Customers;
-export default Orders;
+//module.exports = OrderItems;
+export default OrderItems;
