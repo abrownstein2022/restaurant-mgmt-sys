@@ -24,7 +24,7 @@ The following technologies and instructions were used:
 • Meet good-quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, and so on).
 • Have a professional README (with unique name, description, technologies used, screenshot, and link to deployed application).
 
-Create our own user story??
+<!-- Create our own user story??
 User Story  (from challenge 6 as an example)
 AS A traveler
 I WANT to see the weather outlook for multiple cities
@@ -39,7 +39,7 @@ THEN I am presented with the city name, the date, an icon representation of weat
 WHEN I view future weather conditions for that city
 THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the wind speed, and the humidity
 WHEN I click on a city in the search history
-THEN I am again presented with current and future conditions for that city
+THEN I am again presented with current and future conditions for that city -->
 
 ```
 
