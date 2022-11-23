@@ -76,22 +76,44 @@ Here's a link to this application in GitHub:
 https://abrownstein2022.github.io/proj2-restaurant-mgmt-sys/
 
 ```md
+For the purposes of this exercise:
+1. Although this application can handle different restaurants, we are using one restaurant only
+called "Group Five's Burgers and Fries".
+2. This restaurant only accepts online orders.
+3. A customer called "employee" has access to admin screens to maintain
+look-up data that the customers see/use (restaurants, items, itemtypes).
+4. The "employee" login also has access to update customer and order information.
+
+After following the steps to install necessary software, please proceed below.
+
 To use this application, go to the Terminal and type 'npm start' and press enter.
 
-A login screen appears for the customer to enter their login and password, or sign up.
+A login screen appears for the customer to enter their login and password, or sign up.  
+If a customer forgets their password, they click on the "Forgot my password" link to 
+reset it.
 
 Once logged in, the customer lands on the main website page with the option to click on a 
-'Place Order' button.
+'Place Order' button, to enter their new order, or "Update My Info", which allows them to 
+update their customer info.
 
-When they click on the 'Place Order' button, they are sent to a page to select item types 
-and select items from that category and indicate the quanity of that itemt they would like
-to order. Customers can enter as many order lines as they want by clicking on the 
-"Order additional items" button.  When they are done their order, they click 
-"I'm done" and they see their order number, items ordered, order quantity, line 
-item cost and total order cost.
+When a customer clicks on the 'Place Order' button, they are sent to a page to select item 
+types, and select an item based on the item type selected. The item price is then displayed
+next to the selected item.    
 
-For the purposes of this exercise, this restaurant only accepts online orders.
+Customers can enter as many order lines as they want by clicking on the 
+"Order additional items" button.  
 
+The customer can also change that line item to something else before
+confirming the order. Customers must also enter the item quanity for each item ordered. 
+
+When the customer is done creating their order, they click the "I'm done" button.  Then, 
+their order number, order date, and all their order lines are displayed.  Order lines contain
+line item total cost and the order total cost at the bottom.
+
+In the admin area of the website, which is only available to the customer "employee", the lookup
+data can be created, updated and viewed.  This functionality works for the following data: 
+restaurants, customers, item types and items.  The "employee" login also has access to update 
+any orders and orderitems data placed by customers.  
 
 ```
 
