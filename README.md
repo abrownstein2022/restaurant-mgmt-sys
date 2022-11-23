@@ -72,9 +72,6 @@ To use this application, please read the following steps:
 
 ## Usage
 
-Here's a link to this application in GitHub:
-https://abrownstein2022.github.io/proj2-restaurant-mgmt-sys/
-
 ```md
 After following the installation steps above, please proceed below.
 
@@ -107,7 +104,7 @@ line item total cost and the order total cost at the bottom.
 "Update/Delete My Info" button
 1. Customers can change their their first name, last name, business name (optional), phone number,
 login and password.
-2. All fields are required except for the business name.  Phone number is validated to be 9 numbers.
+2. All fields are required except for the business name.  Phone number is validated to be 10 numbers.
 3. Customers press the "Save My Changes" button to submit the updates to the database.  They see a
 message stating that their account info has been updated.
 4. Customers may also delete their account by clicking on the "Delete My Account" button.  They see a
