@@ -25,14 +25,6 @@ Items.init(
         unique: false
       }
     },
-    restaurant_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'restaurants',
-        key: 'restaurant_id',
-        unique: false
-      }
-    }, 
     item_name: {
       type: DataTypes.STRING,
       allowNull: false
@@ -40,19 +32,7 @@ Items.init(
     item_cost: {
       type: DataTypes.DECIMAL,
       defaultValue: 0  //built-in function/method
-    },
-    comments: {
-      type: DataTypes.STRING,
-      allowNull: true
-    },
-    date_added: {
-      type: DataTypes.DATE,
-      defaultValue: DataTypes.NOW  //built-in function/method
-    },
-    added_by: {
-      type: DataTypes.STRING,
-      allowNull: true   
-    },
+    }
   }, 
   {
     sequelize,

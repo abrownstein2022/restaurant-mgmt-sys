@@ -1,6 +1,5 @@
 [
   {
-    "restaurant_id": 1,
     "customer_first_name": "Mary",
     "customer_last_name": "Smith",
     "business_name": "",
@@ -9,7 +8,7 @@
     "customer_password": "1234"
   },
   {
-    "restaurant_id": 1,
+   
     "customer_first_name": "Joe",
     "customer_last_name": "Gerson",
     "business_name": "Joe's Tires",
@@ -18,7 +17,6 @@
     "customer_password": "4444"
   },
   {
-    "restaurant_id": 1,
     "customer_first_name": "Chuck",
     "customer_last_name": "Jones",
     "business_name": "",

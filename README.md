@@ -2,7 +2,21 @@
 
 ![license](https://img.shields.io/badge/license-MIT-black)
 
+## Table of Contents
+
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
+- [Features](#features)
+- [How-to-Contribute](#how-to-contribute)
+- [Tests](#test-instructions)
+- [Questions](#questions)
+
 ## Description
+
+<!-- this is `inline-code` here -->
 
 ```md
 This interactive full-stack project is a restaurant management system called Restaurant_Mgr. 
@@ -24,6 +38,7 @@ The following technologies and instructions were used:
 • Meet good-quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, and so on).
 • Have a professional README (with unique name, description, technologies used, screenshot, and link to deployed application).
 
+*******************
 Create our own user story??
 User Story  (from challenge 6 as an example)  ******
 AS A traveler ******
@@ -40,32 +55,42 @@ WHEN I view future weather conditions for that city
 THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the wind speed, and the humidity
 WHEN I click on a city in the search history
 THEN I am again presented with current and future conditions for that city  ******
+*****************************************
 
 ```
 
-## Table of Contents
-
-- [Description](#description)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
-- [Features](#features)
-- [How-to-Contribute](#how-to-contribute)
-- [Tests](#test-instructions)
-- [Questions](#questions)
 
 ## Installation
 
-```md
 To use this application, please read the following steps:
 
-1.  Clone this GitHub repo.
-2.  From the terminal, run 'npm install'.
-3.  Run sequelize and seed the database on your local computer:
-    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Clone this GitHub repo XXXXXXXXXXXXX link to github repo.
+<!-- Check out the gh cli tool from github -->
+```bash
+$ gh repo clone /username/reponame
+```
+From the terminal, run 
+
+```bash
+$ npm install
+```
+
+In package.json, peer dependencies already exist for dotenv, mysql2 and
+sequelize so you do not have to install these packages. 
+
+Log into mysql:
+```
+$ mysql –u[user name] -p[password] -h[hostname] 
+```
+Create the mysql database on your local machine:
+```sql
+ mysql> --source './db/schema.sql'
+```
+[] implies user input
+ mysql> *database name* < C:\[filename].sql
+
+5.  Create the tables and seed with data:
+    $ npm run './seeds/seed.js
 
  
 ```
