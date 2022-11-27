@@ -17,14 +17,6 @@ Orders.init(
       primaryKey: true,
       autoIncrement: true
     },
-    order_type_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'ordertypes',
-        key: 'order_type_id',
-        unique: false
-      }
-    },
     customer_id: {
       type: DataTypes.INTEGER,
       references: {
@@ -40,19 +32,7 @@ Orders.init(
     order_notes: {
       type: DataTypes.STRING,
       allowNull: true
-    },
-    comments: {
-      type: DataTypes.STRING,
-      allowNull: true
-    },
-    date_added: {
-      type: DataTypes.DATE,
-      defaultValue: DataTypes.NOW  //built-in function/method
-    },
-    added_by: {
-      type: DataTypes.STRING,
-      allowNull: true   
-    },
+    }
   }, 
   {
     sequelize,
