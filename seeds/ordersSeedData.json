@@ -1,17 +1,26 @@
 [
   {
-    "order_type_id": 1,
     "customer_id": 2,
-    "order_notes": "Thanks for your order!"
+    "order_notes": "Pick up in 1 hour"
   },
   {
-    "order_type_id": 3,
     "customer_id": 1,
-    "order_notes": ""
+    "order_notes":  "Pick up in 1 hour"
   },
   {
-    "order_type_id": 2,
     "customer_id": 3,
     "order_notes": "Pick up in 45 minutes"
+  },
+  {
+    "customer_id": 1,
+    "order_notes":  "Pick up in 2 hours"
+  },
+  {
+    "customer_id": 3,
+    "order_notes": "Pick up in 1 hour"
+  },
+  {
+    "customer_id": 2,
+    "order_notes": "Pick up in 2 hours"
   }
 ]

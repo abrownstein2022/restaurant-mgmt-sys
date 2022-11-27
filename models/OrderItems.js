@@ -36,19 +36,7 @@ OrderItems.init(
     quantity: {
       type: DataTypes.INTEGER,
       defaultValue: 1  
-    },
-    comments: {
-      type: DataTypes.STRING,
-      allowNull: true
-    },
-    date_added: {
-      type: DataTypes.DATE,
-      defaultValue: DataTypes.NOW  //built-in function/method
-    },
-    added_by: {
-      type: DataTypes.STRING,
-      allowNull: true   
-    },
+    }
   }, 
   {
     sequelize,
