@@ -21,6 +21,7 @@
   "homepage": "https://github.com/abrownstein2022/proj2-restaurant-mgmt-sys#readme",
   "dependencies": {
     "dotenv": "^16.0.3",
+    "i": "^0.3.7",
     "mysql2": "^2.3.3",
     "sequelize": "^6.25.7"
   }
