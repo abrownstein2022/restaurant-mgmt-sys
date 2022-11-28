@@ -37,7 +37,7 @@ Orders.hasMany(OrderItems, {
   onDelete: 'CASCADE',
 });
 
-//module.exports = {ItemTypes, Customers, Items, Orders, OrderItems};
+module.exports = {ItemTypes, Customers, Items, Orders, OrderItems};
 // export {
 //   ItemTypes,
 //   Customers,
