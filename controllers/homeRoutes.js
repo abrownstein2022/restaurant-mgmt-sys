@@ -1,6 +1,7 @@
 const router = require('express').Router();
-const { Project, User } = require('../models');
+const { Project, User, Customers } = require('../models');
 const withAuth = require('../utils/auth');
+const log = require('../utils/logger')
 
 // empty routes are treated as an empty path (/) and typically used to show the homepage
 // localhost:3001
@@ -33,35 +34,62 @@ router.get('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+
+//this open handlebars (html) page for the menu for ordering
 router.get('/menu', async (req, res) =>{
-res.render('menu')
+  res.render('menu')
 })
 
-router.get('/project/:id', async (req, res) => {
+// router.get('/project/:id', async (req, res) => {
+//   try {
+//     // const projectData = await Project.findByPk(req.params.id, {
+//     //   include: [
+//     //     {
+//     //       model: User,
+//     //       attributes: ['name'],
+//     //     },
+//     //   ],
+//     // });
+
+//     // const project = projectData.get({ plain: true });
+
+//     res.render('project', {
+//       // ...project,
+//       logged_in: req.session.logged_in
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
+
+// Use withAuth middleware to prevent access to route
+router.get('/orders', withAuth, async (req, res) => {
   try {
-    // const projectData = await Project.findByPk(req.params.id, {
-    //   include: [
-    //     {
-    //       model: User,
-    //       attributes: ['name'],
-    //     },
-    //   ],
-    // });
+    // TODO:
+    //* Find the logged in users data, and their list of orders
+    //* render orders page with array of order data
 
-    // const project = projectData.get({ plain: true });
+    const userData = await Customers.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      // include: [{ model: Project }],
+    });
 
-    res.render('project', {
-      // ...project,
-      logged_in: req.session.logged_in
+    const user = userData.get({ plain: true });
+
+    res.render('orders', {
+      ...user,
+      //! pass array of orders here
+      logged_in: true
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-// Use withAuth middleware to prevent access to route
-router.get('/profile', withAuth, async (req, res) => {
+router.get('/orders/:id', withAuth, async (req, res) => {
   try {
+    const myVariable = req.params.id
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
