@@ -37,11 +37,11 @@ Orders.hasMany(OrderItems, {
   onDelete: 'CASCADE',
 });
 
-//module.exports = { Traveller, Location, Trip };
-export {
-  ItemTypes,
-  Customers,
-  Items,
-  Orders,
-  OrderItems
-}
+//module.exports = {ItemTypes, Customers, Items, Orders, OrderItems};
+// export {
+//   ItemTypes,
+//   Customers,
+//   Items,
+//   Orders,
+//   OrderItems
+// }
