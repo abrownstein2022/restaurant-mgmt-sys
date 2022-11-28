@@ -1,7 +1,7 @@
-// const { Model, DataTypes } = require('sequelize');
-// const sequelize = require('../config/connection');
-import { Model, DataTypes } from 'sequelize';
-import sequelize from '../config/connection.js';
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
+//import { Model, DataTypes } from 'sequelize';
+//import sequelize from '../config/connection.js';
 
 /**
  * create our OrderItems model
@@ -36,19 +36,7 @@ OrderItems.init(
     quantity: {
       type: DataTypes.INTEGER,
       defaultValue: 1  
-    },
-    comments: {
-      type: DataTypes.STRING,
-      allowNull: true
-    },
-    date_added: {
-      type: DataTypes.DATE,
-      defaultValue: DataTypes.NOW  //built-in function/method
-    },
-    added_by: {
-      type: DataTypes.STRING,
-      allowNull: true   
-    },
+    }
   }, 
   {
     sequelize,
@@ -59,5 +47,5 @@ OrderItems.init(
   }
 );
 
-//module.exports = OrderItems;
-export default OrderItems;
+module.exports = OrderItems;
+//export default OrderItems;

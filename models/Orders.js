@@ -1,7 +1,8 @@
-// const { Model, DataTypes } = require('sequelize');
-// const sequelize = require('../config/connection');
-import { Model, DataTypes } from 'sequelize';
-import sequelize from '../config/connection.js';
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
+
+//import { Model, DataTypes } from 'sequelize';
+//import sequelize from '../config/connection.js';
 
 /**
  * create our Orders model
@@ -16,14 +17,6 @@ Orders.init(
       allowNull: false,
       primaryKey: true,
       autoIncrement: true
-    },
-    order_type_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'ordertypes',
-        key: 'order_type_id',
-        unique: false
-      }
     },
     customer_id: {
       type: DataTypes.INTEGER,
@@ -40,19 +33,7 @@ Orders.init(
     order_notes: {
       type: DataTypes.STRING,
       allowNull: true
-    },
-    comments: {
-      type: DataTypes.STRING,
-      allowNull: true
-    },
-    date_added: {
-      type: DataTypes.DATE,
-      defaultValue: DataTypes.NOW  //built-in function/method
-    },
-    added_by: {
-      type: DataTypes.STRING,
-      allowNull: true   
-    },
+    }
   }, 
   {
     sequelize,
@@ -63,5 +44,5 @@ Orders.init(
   }
 );
 
-//module.exports = Customers;
-export default Orders;
+module.exports = Orders;
+//export default Orders;
