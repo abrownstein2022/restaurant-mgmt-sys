@@ -26,6 +26,9 @@ router.get('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
+router.get('/menu', async (req, res) =>{
+res.render('menu')
+})
 
 router.get('/project/:id', async (req, res) => {
   try {

@@ -2,8 +2,7 @@
   "name": "proj2-restaurant-mgmt-sys",
   "version": "1.0.0",
   "description": "A restaurant can maintain their food and beverage catalog, orders (online, by phone and in person),  deliveries, delivery people, and customers.",
-  "main": "index.js",
-  "type": "module",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "seed-database": "node seeds/seed.js"
@@ -21,6 +20,9 @@
   "homepage": "https://github.com/abrownstein2022/proj2-restaurant-mgmt-sys#readme",
   "dependencies": {
     "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-handlebars": "^6.0.6",
+    "express-session": "^1.17.3",
     "mysql2": "^2.3.3",
     "sequelize": "^6.25.7"
   }
