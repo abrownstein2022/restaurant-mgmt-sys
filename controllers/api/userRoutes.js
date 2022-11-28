@@ -1,17 +1,21 @@
 const router = require("express").Router();
 const { User } = require("../../models");
+const withAuth = require("../../utils/auth");
 
 //Creates profile
-router.post("/", async (req, res) => {
+// with auth is middleware that will intercept the request to this route
+// withAuth checks the login status and calls next(), or sends user to login
+router.get("/", async (req, res) => {
   try {
-    const userData = await User.create(req.body);
+    // const userData = await User.create(req.body);
 
-    req.session.save(() => {
-      req.session.user_id = userData.id;
-      req.session.logged_in = true;
+    // req.session.save(() => {
+    //   req.session.user_id = userData.id;
+    //   req.session.logged_in = true;
 
-      res.status(200).json(userData);
-    });
+    //   res.status(200).json(userData);
+    // });
+      res.status(200).json("ayoo");
   } catch (err) {
     res.status(400).json(err);
   }
@@ -59,3 +63,5 @@ router.post("/logout", (req, res) => {
     res.status(404).end();
   }
 });
+
+module.exports = router;  //alexis 11/28/22

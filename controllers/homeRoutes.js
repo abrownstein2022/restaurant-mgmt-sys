@@ -2,24 +2,31 @@ const router = require('express').Router();
 const { Project, User } = require('../models');
 const withAuth = require('../utils/auth');
 
+// empty routes are treated as an empty path (/) and typically used to show the homepage
+// localhost:3001
+// same as localhost:3001/
+// localhost:3001/profile
+// most browser view pages will not be protected by middleware
+// they will be visible to anyone
+// no "withAuth" needed
 router.get('/', async (req, res) => {
+  console.log("path: '/'")
   try {
     // Get all projects and JOIN with user data
-    const projectData = await Project.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
-    });
+    // const projectData = await Project.findAll({
+    //   include: [
+    //     {
+    //       model: User,
+    //       attributes: ['name'],
+    //     },
+    //   ],
+    // });
 
-    // Serialize data so the template can read it
-    const projects = projectData.map((project) => project.get({ plain: true }));
+    // // Serialize data so the template can read it
+    // const projects = projectData.map((project) => project.get({ plain: true }));
 
     // Pass serialized data and session flag into template
     res.render('homepage', { 
-      projects, 
       logged_in: req.session.logged_in 
     });
   } catch (err) {
@@ -32,19 +39,19 @@ res.render('menu')
 
 router.get('/project/:id', async (req, res) => {
   try {
-    const projectData = await Project.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
-    });
+    // const projectData = await Project.findByPk(req.params.id, {
+    //   include: [
+    //     {
+    //       model: User,
+    //       attributes: ['name'],
+    //     },
+    //   ],
+    // });
 
-    const project = projectData.get({ plain: true });
+    // const project = projectData.get({ plain: true });
 
     res.render('project', {
-      ...project,
+      // ...project,
       logged_in: req.session.logged_in
     });
   } catch (err) {
