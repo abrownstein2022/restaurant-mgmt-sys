@@ -24,6 +24,7 @@ router.get('view-orders', async (req, res) => {
 })
 
 router.post('place-order', (req, res) => {
+    
   // place an order
 
 })
