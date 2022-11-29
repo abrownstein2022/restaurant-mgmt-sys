@@ -2,6 +2,8 @@ const router = require('express').Router();
 const { Project, User, Customers } = require('../models');
 const withAuth = require('../utils/auth');
 const log = require('../utils/logger')
+//! homeRoutes.js should only be used for handlebar view routes
+
 
 // empty routes are treated as an empty path (/) and typically used to show the homepage
 // localhost:3001
@@ -107,6 +109,18 @@ router.get('/orders/:id', withAuth, async (req, res) => {
   }
 });
 
+router.get('/register', (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  if (req.session.logged_in) {
+    res.redirect('/profile');
+    return;
+  }
+  //! on the register page, pass the value of "show_register" to the login page, to switch between
+  //! register and login pages
+  res.render('login', { show_register: true }); // show registration section
+  // res.render('login', { show_register: false }); // show login section
+});
+
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
@@ -114,7 +128,69 @@ router.get('/login', (req, res) => {
     return;
   }
 
-  res.render('login');
+  res.render('login', { show_register: true });
+});
+
+//route for view orders for logged in customer
+// router.get("/view-order", async (req, res) => {
+//   try {
+//     // const log = logger('/view-order')
+//     //do get request to api/orders to return array of orders
+//     //alexis will write api abstraction (function) for people in your API
+//     //to use your API.  Abstraction functions make it so they only have to call
+//     //one function.  They are shared functions. 
+//     console.log('Registering user:', req.body)
+    
+//     //use customerid value stored in session var called "req.session.customer_id"
+
+//     // let userExists = await Customers.findOne(req.body)
+//     // create the customer record in Customer model
+//     let result = await fetch('/api/orders/view-orders')
+//     //- check to see if the user is in the db first
+
+//     //  pass the whole req.body object into the query, because it matches the schema
+//     //  this becomes `INSERT INTO Customers (fname, lname, phone) VALUES ('john', 'wick', null)
+
+//     //  if db interaction threw an error, all steps below are skipped
+//     // res.status(200).json(updatedUserData)
+//     /*
+//     100 =>
+//     2xx => Success
+//     3xx => ----- rare - server side
+//     4xx => user input errror
+//     5xx => server error
+//     */
+
+
+
+
+
+
+//     // always return something, at least a status
+//     // res.status(200).json('ayo')
+//     // let res = {}
+//     // .json('')
+
+//     // send is used when the object is already valid json or json-like object
+//     // res.status(200).send({
+//     //   userData: someData
+//     // })
+//   } catch (err) {
+//     res.status(400).json(err);
+//   }
+// });
+
+
+router.get('/view-order', (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  if (req.session.logged_in) {
+    res.redirect('/profile');
+    return;
+  }
+  //! on the register page, pass the value of "show_register" to the login page, to switch between
+  //! register and login pages
+  res.render('vieworder', { order_array: 'pass data here' }); // show registration section
+  // res.render('login', { show_register: false }); // show login section
 });
 
 module.exports = router;
