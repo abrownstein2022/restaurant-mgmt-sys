@@ -7,8 +7,8 @@
 const sequelize = require('../config/connection');
 const {Customers, ItemTypes, Items, Orders, OrderItems} = require('../models');
 
-const customersSeedData = require('customersSeedData.json');
-const itemsSeedData = require('.itemsSeedData.json');
+const customersSeedData = require('./customersSeedData.json');
+const itemsSeedData = require('./itemsSeedData.json');
 const itemtypesSeedData = require('./itemtypesSeedData.json');
 const ordersSeedData = require('./ordersSeedData.json');
 const orderitemsSeedData = require('./orderitemsSeedData.json');
