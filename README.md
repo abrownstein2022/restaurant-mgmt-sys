@@ -92,7 +92,13 @@ Create the mysql database on your local machine:
 5.  Create the tables and seed with data:
     $ npm run './seeds/seed.js
 
- 
+
+Start the server and watch for file changes to automatically restart server
+```bash
+$ npm run watch 
+```
+
+
 ```
 
 ## Usage
