@@ -1,18 +1,25 @@
 // const sequelize = require('../config/connection');
 // const { Traveller, Location, Trip } = require('../models');
 
-import sequelize from '../config/connection.js';
-import {Customers, ItemTypes, Items, Orders, OrderItems} from '../models/index.js';
+// import sequelize from '../config/connection.js';
+// import {Customers, ItemTypes, Items, Orders, OrderItems} from '../models/index.js';
 
-// const travellerSeedData = require('./travellerSeedData.json');
-// const locationSeedData = require('./locationSeedData.json');
+const sequelize = require('../config/connection');
+const {Customers, ItemTypes, Items, Orders, OrderItems} = require('../models');
+
+const customersSeedData = require('customersSeedData.json');
+const itemsSeedData = require('.itemsSeedData.json');
+const itemtypesSeedData = require('./itemtypesSeedData.json');
+const ordersSeedData = require('./ordersSeedData.json');
+const orderitemsSeedData = require('./orderitemsSeedData.json');
+
 
 //! JS does not allow json file imports but, can use 'assert' statement to allow
-import customersSeedData from './customersSeedData.json'assert { type: 'json'};
-import itemtypesSeedData from './itemtypesSeedData.json' assert { type: 'json'};
-import itemsSeedData from './itemsSeedData.json' assert { type: 'json'};
-import ordersSeedData from './ordersSeedData.json' assert { type: 'json'};
-import orderitemsSeedData from './orderitemsSeedData.json' assert { type: 'json'};
+// import customersSeedData from './customersSeedData.json'assert { type: 'json'};
+// import itemtypesSeedData from './itemtypesSeedData.json' assert { type: 'json'};
+// import itemsSeedData from './itemsSeedData.json' assert { type: 'json'};
+// import ordersSeedData from './ordersSeedData.json' assert { type: 'json'};
+// import orderitemsSeedData from './orderitemsSeedData.json' assert { type: 'json'};
 
 // const addData=(data) => {
 //   data = data.map(item => {
