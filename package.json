@@ -2,11 +2,12 @@
   "name": "proj2-restaurant-mgmt-sys",
   "version": "1.0.0",
   "description": "A restaurant can maintain their food and beverage catalog, orders (online, by phone and in person),  deliveries, delivery people, and customers.",
-  "main": "index.js",
-  "type": "module",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "seed-database": "node seeds/seed.js"
+    "seed-database": "node seeds/seed.js",
+    "watch//!": "(npm run watch VS npm start) This will start the server with nodemon (automatic restart on save)",
+    "watch": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -20,9 +21,13 @@
   },
   "homepage": "https://github.com/abrownstein2022/proj2-restaurant-mgmt-sys#readme",
   "dependencies": {
+    "connect-session-sequelize": "^7.1.5",
     "dotenv": "^16.0.3",
-    "i": "^0.3.7",
     "mysql2": "^2.3.3",
-    "sequelize": "^6.25.7"
+    "sequelize": "^6.25.8"
+  },
+  "devDependencies": {
+    "debug": "^4.3.4",
+    "nodemon": "^2.0.20"
   }
 }
