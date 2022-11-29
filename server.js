@@ -53,6 +53,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 // tell the server to use your predefined routes
 app.use(routes);
 
+
+
+// catch-all route
+// any route that doesnmt match any of the defined routes
 app.all('*', (req, res) => {
   console.log('No route found at:', req.path)
   res.render(`errorpage`)
