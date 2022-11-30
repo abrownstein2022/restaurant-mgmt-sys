@@ -102,38 +102,60 @@ router.post('/register', async (req, res) => {
 
 //Post route for login
 // POST localhost:3001/api/users/login
-router.post("/main", async (req, res) => {
+// we are rendering a handlebars page here which is unusual for an API route
+router.post("/login", async (req, res) => {
   try {
     // throw new Error('No user found...')
-    const log = logger('/main')
+    const log = logger('/login')
     log('Logging user in:', req.body)
 
     // find the user by the username (customer_login)
     let userData = await Customers.findOne({
       where: {
-        customer_login: req.body.customer_login
-      }
+        //checking login and password no hashing or storage of password. Just doing string comparison. Basic login.
+        customer_login: req.body.customer_login,
+        customer_password: req.body.customer_password
+       }
     })
 
     // if no user was found, return an error
     if(!userData){
       // res.status(400).json('No user found...');
       // throw to the catch block below to have a centralized place to handle errors
-      throw new Error('No user found...')
+      // throw new Error('No user found...')
+      //render = go to main.handlebars
+      //once render, http request is closed, but code continues to execute for everything below
+      res.render('login',{
+        error: "Invalid username and/or password"
+      })
+      return;  //prevents code below from executing
     }
 
     // update the session data for this user
-    req.session.username = userData.customer_login
     //now we have the customer id and get orders view data based on
     //customer id, which is persistent due to being a session var
+    req.session.username = userData.customer_login
     req.session.customer_id = userData.customer_id
-    res.status(200).json('Logged in!')
+    req.session.logged_in = true
+    // res.status(200).json('Logged in!')
     //res.render('homepage')
+    //log this user in
+
+    res.render('homepage',{
+        layout: false,
+        username: userData.customer_login,
+        customer_id: userData.customer_id,
+
+    });  //handlebars page name only without / or .handlebars extension
 
   } catch (err) {
     // sometimes the err is an object containing the message property
     // otherwise just return the whole err 
-    res.status(200).json(err.message ?? err);
+     //don't return error here go to error page
+    //res.status(200).json(err.message ?? err);
+    res.render('login',{
+      error: err.message ?? err.toString()  //want to pass as string so use toString
+    })
   }
 });
 
@@ -141,14 +163,14 @@ router.post("/main", async (req, res) => {
 
 
 //Post route for logging out
-router.post("/logout", (req, res) => {
-  if (req.session.logged_in) {
+// this route is triggered from a link element, which always send GET requests
+router.get("/logout", (req, res) => {
+
     req.session.destroy(() => {
       res.status(204).end();
     });
-  } else {
-    res.status(404).end();
-  }
+    res.render('logout')
+
 });
 
 module.exports = router;  //alexis 11/28/22

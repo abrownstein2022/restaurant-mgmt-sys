@@ -9,6 +9,30 @@ var waterAddbtn = document.getElementById("waterAdd-7");
 var cookieAddbtn = document.getElementById("cookieAdd-9");
 var fruitSaladAddbtn = document.getElementById("fruitSaladAdd-8");
 
+
+function finalTotal() {
+    let beefTotal = document.querySelector("#t-1").textContent;
+    let turkeyTotal = document.querySelector("#t-2").textContent;
+    let veggieTotal = document.querySelector("#t-3").textContent;
+    let friesTotal = document.querySelector("#t-4").textContent;
+    let chipsTotal = document.querySelector("#t-5").textContent;
+    let sodaTotal = document.querySelector("#t-6").textContent;
+    let waterTotal = document.querySelector("#t-7").textContent;
+    let cookieTotal = document.querySelector("#t-9").textContent;
+    let fruitSaladTotal = document.querySelector("#t-8").textContent;
+
+    // let finalTotal = beefTotal + turkeyTotal + veggieTotal + friesTotal + chipsTotal + sodaTotal + waterTotal + cookieTotal + fruitSaladTotal;
+    let items = [beefTotal , turkeyTotal , veggieTotal , friesTotal , chipsTotal , sodaTotal , waterTotal , cookieTotal , fruitSaladTotal]
+    let total = 0
+
+    items.forEach(item => {
+        console.log('parsing item:', item)
+        total += item ? parseInt(item.replace('$', '')) : 0
+    }) // "$2.00" => "2.00" => 2
+
+    document.querySelector("#finalTotal").textContent =  '$' + total + ".00";  ;
+}
+
 function beefOrder() {
     // get quantity from dropdown saves to variable quantity   
     let quantity = qty1.value;
@@ -19,6 +43,7 @@ function beefOrder() {
     
     document.querySelector("#a-1").textContent = quantity;
     document.querySelector("#t-1").textContent = '$' + beefTotal + ".00";  
+    finalTotal()
 }
 
 beefAddbtn.addEventListener("click", beefOrder);
@@ -33,6 +58,8 @@ function turkeyOrder() {
     
     document.querySelector("#a-2").textContent = quantity;
     document.querySelector("#t-2").textContent = '$' + turkeyTotal + ".00";  
+    finalTotal()
+
 }
 
 turkeyAddbtn.addEventListener("click", turkeyOrder);
@@ -47,6 +74,7 @@ function veggieOrder() {
     
     document.querySelector("#a-3").textContent = quantity;
     document.querySelector("#t-3").textContent = '$' + veggieTotal + ".00";   
+    finalTotal()
 }
 
 veggieAddbtn.addEventListener("click", veggieOrder);
@@ -61,6 +89,7 @@ function friesOrder() {
     
     document.querySelector("#a-4").textContent = quantity;
     document.querySelector("#t-4").textContent = '$' + friesTotal + ".00";   
+    finalTotal()
 }
 
 friesAddbtn.addEventListener("click", friesOrder);
@@ -75,6 +104,7 @@ function chipsOrder() {
     
     document.querySelector("#a-5").textContent = quantity;
     document.querySelector("#t-5").textContent = '$' + chipsTotal+  ".00";    
+    finalTotal()
 }
 
 chipsAddbtn.addEventListener("click", chipsOrder);
@@ -89,6 +119,7 @@ function sodaOrder() {
 
     document.querySelector("#a-6").textContent = quantity;
     document.querySelector("#t-6").textContent = '$' + sodaTotal + ".00";  
+    finalTotal()
 }
 
 sodaAddbtn.addEventListener("click", sodaOrder);
@@ -104,6 +135,7 @@ function waterOrder() {
     document.querySelector("#a-7").textContent = quantity;
     document.querySelector("#t-7").textContent ='$' +  waterTotal + ".00";  
 
+    finalTotal()
 }
 
 waterAddbtn.addEventListener("click", waterOrder);
@@ -119,6 +151,7 @@ function cookieOrder() {
     document.querySelector("#a-9").textContent = quantity;
     document.querySelector("#t-9").textContent = '$' + cookieTotal + ".00"; 
 
+    finalTotal()
 }
 
 cookieAddbtn.addEventListener("click", cookieOrder);
@@ -134,28 +167,14 @@ function fruitSaladOrder() {
     document.querySelector("#a-8").textContent = quantity;
     document.querySelector("#t-8").textContent = '$' + fruitSaladTotal + ".00"; 
 
+    finalTotal()
 }
 
 
 fruitSaladAddbtn.addEventListener("click", fruitSaladOrder);
 
-function finalTotal() {
-    let beefTotal = document.querySelector("#t-1").textContent;
-    let turkeyTotal = document.querySelector("#t-2").textContent;
-    let veggieTotal = document.querySelector("#t-3").textContent;
-    let friesTotal = document.querySelector("#t-4").textContent;
-    let chipsTotal = document.querySelector("#t-5").textContent;
-    let sodaTotal = document.querySelector("#t-6").textContent;
-    let waterTotal = document.querySelector("#t-7").textContent;
-    let cookieTotal = document.querySelector("#t-9").textContent;
-    let fruitSaladTotal = document.querySelector("#t-8").textContent;
 
-    let finalTotal = beefTotal + turkeyTotal + veggieTotal + friesTotal + chipsTotal + sodaTotal + waterTotal + cookieTotal + fruitSaladTotal;
-
-    document.querySelector("#finalTotal").textContent = finalTotal;
-}
-
-finalTotal();
+// finalTotal();
 
 
 /*

@@ -6,10 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Group 5's Burger and Fries</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
-  <link rel="stylesheet" href="../public/css/menu.css" />
-  <header class="title">
-    <h1> Group 5's Burgers and Fries *Place Your Order Here!*</h1>
-  </header>
+  <link rel="stylesheet" href="/css/menu.css" />
 </head>
 
 <body>
@@ -20,7 +17,7 @@
           <div class="card-image">
             <figure class=".image is-4by4">
               <!-- must use relative paths NOT absolute paths to files or doesn't work in default browser. -->
-              <img src="../public/images/Beef-Burger.jpeg"
+              <img src="/images/Beef-Burger.jpeg"
                 alt="photo of juicy beef burger with cheese, lettuce and tomato" class="modal-button"
                 data-target="modal-image1" />
             </figure>
@@ -54,7 +51,7 @@
         <div class="card is-shady">
           <div class="card-image">
             <figure class="image is-4by4">
-              <img src="../public/images/turkey-burger.jpeg"
+              <img src="/images/turkey-burger.jpeg"
                 alt="photo of a fresh juicy turkey burger with lettuc, tomato and onion" />
             </figure>
           </div>
@@ -87,7 +84,7 @@
         <div class="card is-shady">
           <div class="card-image">
             <figure class="image is-6by7">
-              <img src="../public/images/veggie-burger.jpeg"
+              <img src="/images/veggie-burger.jpeg"
                 alt="photo of a veggie burger on a fresh bun with lettuce and fresh toppings" />
             </figure>
           </div>
@@ -121,7 +118,7 @@
         <div class="card is-shady">
           <div class="card-image">
             <figure class="image is-4by4">
-              <img src="../public/images/Fries.jpg" alt="Photo of fresh-cut fries in a basket with herbs" />
+              <img src="/images/Fries.jpg" alt="Photo of fresh-cut fries in a basket with herbs" />
             </figure>
           </div>
           <div class="card-content">
@@ -153,7 +150,7 @@
         <div class="card is-shady">
           <div class="card-image">
             <figure class="image is-4by4">
-              <img src="../public/images/chips.jpg" alt="Photo of fresh-cut, delicious-looking chips"
+              <img src="/images/chips.jpg" alt="Photo of fresh-cut, delicious-looking chips"
                 class="modal-button" data-target="modal-image4" />
             </figure>
           </div>
@@ -190,7 +187,7 @@
         <div class="card is-shady">
           <div class="card-image">
             <figure class="image is-4by4">
-              <img src="../public/images/soda.jpeg" alt="Photo of soda in a glass with a straw" />
+              <img src="/images/soda.jpeg" alt="Photo of soda in a glass with a straw" />
             </figure>
           </div>
           <div class="card-content">
@@ -222,7 +219,7 @@
         <div class="card is-shady">
           <div class="card-image">
             <figure class="image is-4by4">
-              <img src="../public/images/water.jpeg" alt="Photo of water in a glass with a straw" class="modal-button"
+              <img src="/images/water.jpeg" alt="Photo of water in a glass with a straw" class="modal-button"
                 data-target="modal-image4" />
             </figure>
           </div>
@@ -254,7 +251,7 @@
         <div class="card is-shady">
           <div class="card-image">
             <figure class="image is-4by4">
-              <img src="../public/images/cookies.jpeg" alt="Photo of cookies in a basket" />
+              <img src="/images/cookies.jpeg" alt="Photo of cookies in a basket" />
             </figure>
           </div>
           <div class="card-content">
@@ -286,7 +283,7 @@
         <div class="card is-shady">
           <div class="card-image">
             <figure class="image is-4by4">
-              <img src="../public/images/fruitsalad.jpeg" alt="Photo of fresh cut fruit in a bowl" class="modal-button"
+              <img src="/images/fruitsalad.jpeg" alt="Photo of fresh cut fruit in a bowl" class="modal-button"
                 data-target="modal-image4" />
             </figure>
           </div>
@@ -397,7 +394,8 @@
           <th>TOTAL</th>
           <td></td>
           <td></td>
-          <td id="tt"></td>
+          <td></td>
+          <td id="finalTotal"></td>
         </tr>
       </tbody>
     </table>
@@ -408,7 +406,7 @@
   </section>
   </div>
   </section>
-  <script src="../public/js/orders.js"></script>
+  <script src="/js/orders.js"></script>
 </body>
 
 </html>
