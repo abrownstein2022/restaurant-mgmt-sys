@@ -102,10 +102,10 @@ router.post('/register', async (req, res) => {
 
 //Post route for login
 // POST localhost:3001/api/users/login
-router.post("/login", async (req, res) => {
+router.post("/main", async (req, res) => {
   try {
     // throw new Error('No user found...')
-    const log = logger('/login')
+    const log = logger('/main')
     log('Logging user in:', req.body)
 
     // find the user by the username (customer_login)

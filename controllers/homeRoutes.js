@@ -121,7 +121,7 @@ router.get('/register', withAuth, (req, res) => {
   // res.render('login', { show_register: false }); // show login section
 });
 
-router.get('/login', (req, res) => {
+router.get('/main', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
     res.redirect('/homepage');
