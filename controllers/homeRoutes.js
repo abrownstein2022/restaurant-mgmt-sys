@@ -129,7 +129,7 @@ router.get('/main', (req, res) => {
   }
 
 //  res.render('register', { show_register: false }); 
- res.render('login');
+ res.render('main');
 }); 
 
 //route for view orders for logged in customer
