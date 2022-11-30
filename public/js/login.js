@@ -44,6 +44,13 @@ const signupFormHandler = async (event) => {
   }
 };
 
+// var signupButton = document.querySelector('.signup-button')
+// var registerContainer = document.querySelector('.register-container')
+
+// signupButton.addEventListener("click", function() {
+//   registerContainer.style.display = "flex"
+// })
+
 document
   .querySelector('.login-form')
   .addEventListener('submit', loginFormHandler);

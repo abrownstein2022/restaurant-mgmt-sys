@@ -1,7 +1,7 @@
-// const { Model, DataTypes } = require('sequelize');
-// const sequelize = require('../config/connection');
-import { Model, DataTypes } from 'sequelize';
-import sequelize from '../config/connection.js';
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
+//import { Model, DataTypes } from 'sequelize';
+//import sequelize from '../config/connection.js';
 
 /**
  * create our OrderItems model
@@ -47,5 +47,5 @@ OrderItems.init(
   }
 );
 
-//module.exports = OrderItems;
-export default OrderItems;
+module.exports = OrderItems;
+//export default OrderItems;
