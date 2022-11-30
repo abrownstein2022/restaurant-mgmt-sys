@@ -14,21 +14,21 @@ const logger = require('../../utils/logger.js');
 // would come after another route like api/users/
 // in other words, would never just see "http://localhost:3001/api/" in the browser.
 // would always have something after it like http://localhost:3001/api/users etc
-// router.get("/", async (req, res) => {
-//   try {
-//     // const userData = await User.create(req.body);
+router.get("/", async (req, res) => {
+  try {
+    const userData = await User.create(req.body);
 
-//     // req.session.save(() => {
-//     //   req.session.user_id = userData.id;
-//     //   req.session.logged_in = true;
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
 
-//     //   res.status(200).json(userData);
-//     // });
-//       res.status(200).json("ayoo");
-//   } catch (err) {
-//     res.status(400).json(err);
-//   }
-// });
+      res.status(200).json(userData);
+    });
+      res.status(200).json("ayoo");
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
 
 
 /* 
@@ -128,6 +128,7 @@ router.post("/login", async (req, res) => {
     //customer id, which is persistent due to being a session var
     req.session.customer_id = userData.customer_id
     res.status(200).json('Logged in!')
+    //res.render('homepage')
 
   } catch (err) {
     // sometimes the err is an object containing the message property
