@@ -13,12 +13,14 @@ body {
 }
 
 .title {
-  font-size: 30px;
+  font-size: 44px; 
   font-weight: bold;
   text-align: center;
   margin: 10px;
   color: white;
   background-color: black;
+  /* match font in homepage */
+  font-family: 'Times New Roman', Times, serif;
 }
 
 #main {
