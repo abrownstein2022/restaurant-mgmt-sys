@@ -109,10 +109,10 @@ router.get('/orders/:id', withAuth, async (req, res) => {
   }
 });
 
-router.get('/register', (req, res) => {
+router.get('/register', withAuth, (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-    res.redirect('/profile');
+    res.redirect('/homepage');
     return;
   }
   //! on the register page, pass the value of "show_register" to the login page, to switch between
@@ -124,7 +124,7 @@ router.get('/register', (req, res) => {
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-    res.redirect('/profile');
+    res.redirect('/homepage');
     return;
   }
 
