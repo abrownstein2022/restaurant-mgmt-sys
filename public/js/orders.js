@@ -139,8 +139,30 @@ function fruitSaladOrder() {
 
 }
 
+
 fruitSaladAddbtn.addEventListener("click", fruitSaladOrder);
+
+function finalTotal() {
+    let beefTotal = document.querySelector("#t-1").textContent;
+    let turkeyTotal = document.querySelector("#t-2").textContent;
+    let veggieTotal = document.querySelector("#t-3").textContent;
+    let friesTotal = document.querySelector("#t-4").textContent;
+    let chipsTotal = document.querySelector("#t-5").textContent;
+    let sodaTotal = document.querySelector("#t-6").textContent;
+    let waterTotal = document.querySelector("#t-7").textContent;
+    let cookieTotal = document.querySelector("#t-9").textContent;
+    let fruitSaladTotal = document.querySelector("#t-8").textContent;
+
+    let finalTotal = beefTotal + turkeyTotal + veggieTotal + friesTotal + chipsTotal + sodaTotal + waterTotal + cookieTotal + fruitSaladTotal;
+
+    document.querySelector("#finalTotal").textContent = finalTotal;
+}
+
+finalTotal();
+
+
 /*
+
 var qty1El = document.getElementById('qty1');
 
 
