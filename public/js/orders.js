@@ -1,6 +1,6 @@
 
 
-var qty1El = document.getElementById('qty1').selectedOptions[0].value;
+var qty1El = document.getElementById('qty1');
 
 
 qty1El.addEventListener("click", showIt)
