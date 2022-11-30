@@ -14,7 +14,7 @@ const logger = require('../../utils/logger.js');
 // would come after another route like api/users/
 // in other words, would never just see "http://localhost:3001/api/" in the browser.
 // would always have something after it like http://localhost:3001/api/users etc
-router.get("/", async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const userData = await User.create(req.body);
 
@@ -42,7 +42,7 @@ router.get("/", async (req, res) => {
 
 //Post route for login
 // POST localhost:3001/api/users/login
-router.post("/register", async (req, res) => {
+router.post('/register', async (req, res) => {
   try {
     // const log = logger('/register')
     

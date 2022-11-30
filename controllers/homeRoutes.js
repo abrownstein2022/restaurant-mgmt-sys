@@ -117,7 +117,7 @@ router.get('/register', withAuth, (req, res) => {
   }
   //! on the register page, pass the value of "show_register" to the login page, to switch between
   //! register and login pages
-  res.render('login', { show_register: true }); // show registration section
+  res.render('register', { show_register: true }); // show registration section
   // res.render('login', { show_register: false }); // show login section
 });
 
@@ -128,8 +128,9 @@ router.get('/login', (req, res) => {
     return;
   }
 
-  res.render('login', { show_register: true });
-});
+//  res.render('register', { show_register: false }); 
+ res.render('login');
+}); 
 
 //route for view orders for logged in customer
 // router.get("/view-order", async (req, res) => {
