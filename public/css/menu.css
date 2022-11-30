@@ -1,25 +1,29 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
 
+body {
+  background-color: darkolivegreen;
+  padding: 30px 16px;
+}
 
-    * {
-      padding: 0px;
-      margin: 0px;
-      }
-  body {
-      background-color: darkolivegreen;
-      padding: 30px 16px;
-  }
+.body {
+  background-color: aqua;
+}
+
 .title {
   font-size: 30px;
   font-weight: bold;
   text-align: center;
   margin: 10px;
-  color: green;
+  color: white;
   background-color: black;
 }
 
 #main {
   width: 500px;
-  background-color:	grey;
+  background-color: grey;
   border: 1px solid black;
   z-index: 20;
   position: fixed;
@@ -40,7 +44,6 @@
 #order {
   color: white;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
-  
 }
 
 #orders {
@@ -51,10 +54,10 @@
 
 }
 
-.body {
-  background-color: aqua;
-}
+/* place order button */
+#submit-order {
+  /* position: end; */
+  text-align: center;
 
-#submit {
-  position: end;
+
 }
