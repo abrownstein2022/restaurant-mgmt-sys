@@ -4,7 +4,8 @@ const withAuth = require('../utils/auth');
 const log = require('../utils/logger')
 
 
-
+//! handlebars does not render layouts directly - can render a view inside of a layout
+//! never call res.render('main') or res.render('layout')
 //! homeRoutes.js should only be used for handlebar view routes
 
 
@@ -63,7 +64,7 @@ router.get('/place-order', withAuth, async (req, res) => {
     // const user = userData.get({ plain: true });
 
     res.render('placeorder', {
-      layout: false, // layout: 'myLayout' => myLayout.handlebars
+      layout: 'main', // layout: 'special-layout' => special-layout.handlebars
       // ...user,
       //! pass array of orders here
       // logged_in: true
