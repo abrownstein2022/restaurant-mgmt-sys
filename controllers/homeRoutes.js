@@ -34,8 +34,18 @@ router.get('/menu', async (req, res) =>{
   res.render('menu')
 })
 
+// select o.order_id as 'Order #', DATE_FORMAT(order_date, "%M %d %Y") as 'Order Dt', i.item_name as 'Food Name', oi.quantity as 'Qty Ordered', CONCAT('$',FORMAT(i.item_cost,2,'en-us')) as 'Item Cost',  
+// CONCAT('$',FORMAT((i.item_cost * oi.quantity),2,'en-us')) as 'Line Item Cost'
+// from orders o
+// inner join 
+// orderitems oi
+// inner JOIN items i ON oi.item_id = i.item_id
+// on o.order_id = oi.order_id
+// where customer_id = 1  /*mary 1234*/
+// order by o.order_id, oi.item_id
 
 
+//doesn't need With Auth?? check with Mike
 router.get('/view-orders', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   // if (req.session.logged_in) {
