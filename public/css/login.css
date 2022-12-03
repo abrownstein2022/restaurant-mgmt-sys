@@ -46,3 +46,14 @@ p {
 a:hover {
     color: white;
 }
+
+
+/* Make the table full width of the container */
+table{
+    width: 100%;
+}
+/* Add some padding to the td (vieworders.handlebars) */
+td{
+    padding: .5rem 1rem;
+    color: white;
+}
