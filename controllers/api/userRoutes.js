@@ -64,13 +64,17 @@ router.post('/register', async (req, res) => {
     // let userExists = await Customers.findOne(req.body)
     // create the customer record in Customer model
     let updatedUserData = await Customers.create(req.body)
-    //- check to see if the user is in the db first
+    //- TODO: check to see if the user is in the db first
 
     //  pass the whole req.body object into the query, because it matches the schema
     //  this becomes `INSERT INTO Customers (fname, lname, phone) VALUES ('john', 'wick', null)
 
     //  if db interaction threw an error, all steps below are skipped
-    res.status(200).json(updatedUserData)
+    req.session.username = updatedUserData.customer_login
+    req.session.customer_id = updatedUserData.customer_id
+    req.session.logged_in = true
+
+    res.render('homepage', {username: updatedUserData.customer_login})
     /*
     100 =>
     2xx => Success
@@ -94,7 +98,7 @@ router.post('/register', async (req, res) => {
     //   userData: someData
     // })
   } catch (err) {
-    res.status(400).json(err);
+    res.render('errorpage', { error: err?.message ?? err.toString() })
   }
 });
 

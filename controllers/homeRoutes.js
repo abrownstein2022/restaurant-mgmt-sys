@@ -168,7 +168,9 @@ try{
 
 //&                                                                                                                   
 //$ Use withAuth middleware to prevent access to route
-router.get('/place-order', withAuth, async (req, res) => {
+router.get('/place-order', 
+// withAuth,                  //~ COMMENTED OUT FOR TESTING 
+async (req, res) => {
   try {
     // TODO:
     //* Find the logged in users data, and their list of orders
