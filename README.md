@@ -1,6 +1,6 @@
 # Restaurant Management System (Interactive Full-Stack Project)
 
-Link to demo in Heroku:
+**Link to demo in Heroku:**
 https://proj2-restaurant-mgmt-sys.herokuapp.com
 
 ![license](https://img.shields.io/badge/license-MIT-black)
@@ -21,12 +21,13 @@ https://proj2-restaurant-mgmt-sys.herokuapp.com
 
 <!-- this is `inline-code` here -->
 
-
-```md
 This interactive JavaScript full-stack project is a restaurant management system called "Restaurant Mgr". 
+
 The application can be used by a restaurant to allow customers to log in and place online orders.
 
-The following technologies and instructions were used:
+**The following technologies and instructions were used:**
+
+```md
 • Node.js and Express.js to create a RESTful API.
 • Handlebars.js as the template engine.
 • MySQL and the Sequelize ORM for the database.
@@ -42,12 +43,19 @@ The following technologies and instructions were used:
 • Meet good-quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, etc).
 • Have a professional README (with unique name, description, technologies used, screenshot, and link to deployed application).
 
-User Story  
+```
+
+**User Story**  
+
+```md
 As a customer who loves burgers and fries
 I want to have a website to order food online
 SO THAT I am not hungry
+``` 
 
-Acceptance Criteria
+**Acceptance Criteria**
+
+```md
 GIVEN a restaurant ordering system with form inputs
 WHEN I log in with my existing login credentials
 THEN I am presented with a landing page to either place a new order, view my past orders or logout
@@ -67,112 +75,92 @@ WHEN I am done viewing my past orders
 THEN I can press the Back to Homepage button to return to the landing page
 WHEN I press the logout button on the landing page
 THEN I am logged out securely from the application
+```
 
 ## Installation
-the other developers
-To use this application, please read the following steps:
+<!-- audience is other developers -->
+**Note: In package.json, peer dependencies already exist for dotenv, mysql2, sequelize, nodemon and dates-fns so you do not have to install these packages. You should have mysql already installed on your computer.**
 
-Clone this GitHub repo XXXXXXXXXXXXX link to github repo.
+1. Clone this GitHub repo https://github.com/abrownstein2022/proj2-restaurant-mgmt-sys:
 <!-- Check out the gh cli tool from github -->
 ```bash
-$ gh repo clone /username/reponame
+$ gh repo clone /abrownstein2022/proj2-restaurant-mgmt-sys
 ```
-From the terminal, run 
+2. From the terminal, install npm:
 
 ```bash
 $ npm install
 ```
 
-In package.json, peer dependencies already exist for dotenv, mysql2 and
-sequelize so you do not have to install these packages. 
+3. Log into mysql, create the database on your local machine and seed the database:
 
-Log into mysql:
+```bash
+$mysql -u root -p < db/schema.sql
+$npm run seed-database
 ```
-$ mysql –u[user name] -p[password] -h[hostname] 
-```
-Create the mysql database on your local machine:
-```sql
- mysql> --source './db/schema.sql'
-```
-[] implies user input
- mysql> *database name* < C:\[filename].sql
 
-5.  Create the tables and seed with data:
-    $ npm run './seeds/seed.js
+<!-- [] implies user input 
+ mysql> restaurant_mgr < C:\[filename].sql
+-->
 
-
-Start the server and watch for file changes to automatically restart server
+4. Start the local server and watch for file changes to automatically restart server:
 ```bash
 $ npm run watch 
 ```
 
-
-```
+5. Open Express or a browser to test any changes you make to the application after cloning.
 
 ## Usage
 
 ```md
-After following the installation steps above, please proceed below.
-
 For the purposes of this exercise:
-1. This application is used by one restaurant called "Group Five's Burgers and Fries".
+1. This application is used by one restaurant called "Group 5's Burgers and Fries".
 2. This restaurant only accepts online orders.
-3. A customer called "employee" can view all customer and order information(**to be discussed if we have time).
 
-To use this application, go to the Terminal and type 'npm start' and press enter.
+To use this application, go to the Terminal and type 'npm run watch' and press enter.
 
-A login screen appears for the customer to enter their login and password, or sign up.  
-If a customer forgets their password, they click on the "Forgot my password" link to 
-reset it.
+A login screen appears for the customer to enter their login and password, or register as a new customer.  
 
-Once logged in, the customer lands on the main website page with 3 buttons: "Place Order",
-"Update/Delete My Info" and "View My Orders".  
+Once logged in, the customer is sent to the landing page with 3 buttons: "Place Order",
+"View My Past Orders" and "Logout".  
 
 "Place Order' button
-1. Customer see a page to select item types, and select an item based on the item type selected. 
-2. The item price is then displayed next to the selected item.    
-3. Customers can enter as many order lines as they want by clicking on the "Order additional 
-items" button.  
-4. Customers can also change that line item to something else before confirming the order. 
-5. Customers must also enter the item quanity for each item ordered. 
-6. When customers are done creating their order, they click the "I'm done" button.  Then, 
-their order number, order date, and all their order lines are displayed.  Order lines contain
-line item total cost and the order total cost at the bottom.
-7. Customers press the "Return To Homepage" button to close this screen and return to the prevous screen.
+1. Customer see a page to select different food items, and a quantity for each item. 
+2. The item price is displayed under each food item name.    
+3. Customers can enter as many order lines as they want.
+4. Customers see their order items to the right of the page under "Your Order" and a total order cost.
+5. When customers are done creating their order, they click the "Place Order" button, and their order data is created in the database, and they are automatically sent to the "View Past Orders" page.
+6. If customers do not want to place the order once on the order page, they can press the "Back To Homepage" button to close this screen and return to the landing page.
 
-"Update/Delete My Info" button
-1. Customers can change their their first name, last name, business name (optional), phone number,
-login and password.
-2. All fields are required except for the business name.  Phone number is validated to be 10 numbers.
-3. Customers press the "Save My Changes" button to submit the updates to the database.  They see a
-message stating that their account info has been updated.
-4. Customers may also delete their account by clicking on the "Delete My Account" button.  They see a
-message stating that their account has been deleted.
-5. Customers press the "Return To Homepage" button to close this screen and return to the prevous screen.
-
-"View My Orders" button
+"View Past Orders" button
 1. Customers see only their past order information.
-2. Customers press the "Return To Homepage" button to close this screen and return to the prevous screen.
+2. Customers press the "Return To Homepage" button to close this screen and return to the landing page.
 
+"Logout" button
+1. Customers press this button to securely log out of the application.
 
 ```
 
-![example image1](./assets/images/proj2-screen1.png)
+![example image login page](./assets/images/proj2-screen1.png)
 
-![example image2](./assets/images/proj2-screen2.png)
+![example image register page](./assets/images/proj2-screen2.png)
 
-![example image3](./assets/images/proj2-screen3.png)
+![example image landing page](./assets/images/proj2-screen3.png)
 
-![example image4](./assets/images/proj2-screen4.png)
+![example image place order page menu](./assets/images/proj2-screen4.png)
 
-![example image5](./assets/images/proj2-screen5.png)
+![example image place order page order details](./assets/images/proj2-screen4.png)
 
-![demo video](./assets/video/proj2-restaurant-mgr-demo.gif)
+![example image view past orders page](./assets/images/proj2-screen5.png)
+
+![example image view logout page](./assets/images/proj2-screen5.png)
+
+
 
 ## Credits
 
 ```md
-Group 5 team members: Kweku Adarkwa, Justin Anderson, Alexis Brownstein, Ryan Dong, Luana Paredes, bootcamp instructor, TAs and bootcamp, Phil, and Wyzant tutor, Mike
+Group 5 team members: Kweku Adarkwa, Justin Anderson, Alexis Brownstein, Ryan Dong, Luana Paredes, bootcamp instructor, TAs and bootcamp tutor: Phil, and Wyzant tutor: Mike
 ```
 
 ## License
@@ -202,7 +190,7 @@ _underline_
 | name | 'bob' |
 
 
-- listt
+- list
 - items
 
 1. numberd
@@ -210,46 +198,48 @@ _underline_
 1. all ones - auttomatic numbering
 Feattures for *future* development
  -->
-```md
-The main features in this project are:
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+**The main features in this project are:**<br>
+1. Node.js and Express.js to create a RESTful API
+1. Handlebars.js as the template engine
+1. MySQL and the Sequelize ORM for the database
+1. Both GET and POST routes for retrieving and adding new data (create customer registration and order data in database, view order data)
+1. Dates-fns to format the order date in vieworder.handlebars (https://date-fns.org/)
+1. Nodemon for testing to automatically restart the local server when it detects changes made to files
+1. Folder structure that meets the MVC paradigm
+1. Authentication (express-session and cookies in login and registration pages)
+1. Protect API keys and sensitive information with environment variables
+1. Deployed using Heroku (with data)
+1. Polished UI
+1. Interactive and responsive design
+1. Meets good-quality coding standards 
+1. Professional README
 
+**Future Development Features**<br>
+If we had more time to complete this school project, we would like to have made the following enhancements to our application:
 
-Future Development Features
-With more time, we would like to have made the following enhancements to our project:
-Add logic for customers to update their own data
-Add logic for employers to use the application to update food and beverage items, and order and customer data
-Add logic for the application to handle multiple restaurants
-Add logic for phone and delivery orders
-Capture more field values in each database table
-Check for username already existing before allowing a new username and password to be saved
-Add “forgot password” logic
-Add “Go to Homepage” button from order page
+1. Add logic for customers to update their own data
+1. Add logic for employers to use the application to update food and beverage items, and order and customer data
+1. Add logic for the application to handle multiple restaurants
+1. Add logic for phone and delivery orders
+1. Capture more field values in each database table
+1. Check for username already existing before allowing a new username and password to be saved
+1. Add “forgot password” logic
+1. Improve order page by dynamically getting item_id values
 
-```
 
 ## How-to-Contribute
 
-```md
 N/A
-```
 
 ## Test Instructions
 
-```md
 N/A
-```
 
 ## Questions
 
-```md
 Feel free to contact us with any questions.
 
 We can be reached at alexis@drdatabase.com.
-```
 
 This GitHub repo can be found at:
   
