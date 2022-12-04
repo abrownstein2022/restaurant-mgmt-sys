@@ -71,8 +71,8 @@ router.post('/register', async (req, res) => {
     req.session.username = updatedUserData.customer_login
     req.session.customer_id = updatedUserData.customer_id
     req.session.logged_in = true
-
-    res.render('homepage', {username: updatedUserData.customer_login})
+  //12/3/22 alexis added layout:false below (yay this is correct!)
+    res.render('homepage', {layout: false, username: updatedUserData.customer_login})
     /*
     100 =>
     2xx => Success

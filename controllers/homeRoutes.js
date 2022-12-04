@@ -2,10 +2,11 @@ const router = require('express').Router();
 const { Customers, Orders, OrderItems, Items } = require('../models');
 const withAuth = require('../utils/auth');
 const log = require('../utils/logger')
+//! need next 2 lines for raw sequelize query to get view orders page to work (3 table joins)
 const sequelize = require('sequelize');
 const db = require('../config/connection');
+//! additional library to format order date in handlebars display in view-orders
 const dateFns = require('date-fns')
-
 
 //! handlebars does not render layouts directly - can render a view inside of a layout
 //! never call res.render('main') or res.render('layout')
@@ -140,7 +141,7 @@ try{
       type: sequelize.QueryTypes.SELECT
     }
   )
-  // wont execute until above is finished, and did not throw errors
+  // won't execute until above is finished, and if no errors thrown
   order_array = order_array.map(item => ({
     ...item,
     line_cost: item.quantity * item.item_cost,
@@ -156,7 +157,7 @@ try{
 //     console.log(order_array);
 // })
 
-//- this is replace with a try/catch block
+//- this is replaced with a try/catch block
 // .catch((error) => {
 //     console.error('Failed to read data : ', error);
 // });
@@ -209,7 +210,9 @@ router.get('/register', (req, res) => {
   // }
   //! on the register page, pass the value of "show_register" to the login page, to switch between
   //! register and login pages
-  res.render('register', { show_register: true }); // show registration section
+  //alexis 12/3/22 added layout:false below
+  res.render('register', {show_register: true }); // show registration section
+  //res.render('register', {layout: false, show_register: true }); // show registration section
   // res.render('login', { show_register: false }); // show login section
 });
 
