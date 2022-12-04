@@ -23,49 +23,53 @@ https://proj2-restaurant-mgmt-sys.herokuapp.com
 
 
 ```md
-This interactive full-stack project is a restaurant management system called Restaurant_Mgr. 
-The application can be used by restaurants to manage their food items and orders, and allow customers to log in and place orders.
+This interactive JavaScript full-stack project is a restaurant management system called "Restaurant Mgr". 
+The application can be used by a restaurant to allow customers to log in and place online orders.
 
 The following technologies and instructions were used:
 • Node.js and Express.js to create a RESTful API.
 • Handlebars.js as the template engine.
 • MySQL and the Sequelize ORM for the database.
 • Both GET and POST routes for retrieving and adding new data.
-• At least one new library, package, or technology that we haven’t discussed in class.  This project is using dates-fns to format dates. (https://date-fns.org/)
+• At least one new library, package, or technology that we haven’t discussed in class.  This project uses dates-fns to format the order date in vieworder.handlebars (https://date-fns.org/).  We also used Nodemon for testing to automatically restart the local server when it detects changes made to files.
 • Have a folder structure that meets the MVC paradigm.
-• Include authentication (express-session and cookies).  This project includes a login page for customers to place online orders from Group Five's Burgers and Fries.
+• Include authentication (express-session and cookies).  This project includes register and login pages for customers to login to place online orders from our restaurant "Group 5's Burgers and Fries".
 • Protect API keys and sensitive information with environment variables.
 • Be deployed using Heroku (with data).
 • Have a polished UI.
-• Be responsive.
-• Be interactive (in other words, accept and respond to user input).
-• Meet good-quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, and so on).
+• Be responsive.  We changed formatting in the handlebars files and tested to ensure the design works on smaller screens, like mobile devices.
+• Be interactive (accept and respond to user input).
+• Meet good-quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, etc).
 • Have a professional README (with unique name, description, technologies used, screenshot, and link to deployed application).
 
-*******************
-Create our own user story??
-User Story  (from challenge 6 as an example)  ******
-AS A traveler ******
-I WANT to see the weather outlook for multiple cities ******
-SO THAT I can plan a trip accordingly ******
+User Story  
+As a customer who loves burgers and fries
+I want to have a website to order food online
+SO THAT I am not hungry
 
 Acceptance Criteria
-GIVEN a weather dashboard with form inputs ******
-WHEN I search for a city
-THEN I am presented with current and future conditions for that city and that city is added to the search history ******
-WHEN I view current weather conditions for that city
-THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, and the wind speed
-WHEN I view future weather conditions for that city
-THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the wind speed, and the humidity
-WHEN I click on a city in the search history
-THEN I am again presented with current and future conditions for that city  ******
-*****************************************
-
-```
-
+GIVEN a restaurant ordering system with form inputs
+WHEN I log in with my existing login credentials
+THEN I am presented with a landing page to either place a new order, view my past orders or logout
+WHEN I register as a new customer 
+THEN my customer and login data are saved and I am automatically taken to the landing page
+WHEN I press the Place Order button to place a new order
+THEN I am presented with the menu items, a quantity input field and a button to add amy item to my order
+WHEN I am selecting my menu items on the Place Order page
+THEN I see a display of my current order and a Place Order button so I can place my order when I am ready 
+WHEN I press the Place Order button on the order page to submit my order
+THEN my order data is saved in the database
+WHEN I am done with my order
+THEN I can press the Back to Homepage button to return to the landing page
+WHEN I press the View Past Orders button
+THEN I see my past orders in a columnar display
+WHEN I am done viewing my past orders
+THEN I can press the Back to Homepage button to return to the landing page
+WHEN I press the logout button on the landing page
+THEN I am logged out securely from the application
 
 ## Installation
-
+the other developers
 To use this application, please read the following steps:
 
 Clone this GitHub repo XXXXXXXXXXXXX link to github repo.
@@ -168,7 +172,7 @@ message stating that their account has been deleted.
 ## Credits
 
 ```md
-Group 5 team members: Kweku Adarkwa, Justin Anderson, Alexis Brownstein, Ryan Dong, Luana Paredes, bootcamp instructor, TAs and tutor 
+Group 5 team members: Kweku Adarkwa, Justin Anderson, Alexis Brownstein, Ryan Dong, Luana Paredes, bootcamp instructor, TAs and bootcamp, Phil, and Wyzant tutor, Mike
 ```
 
 ## License
@@ -186,12 +190,45 @@ https://opensource.org/licenses/mit-license
 
 ## Features
 
+<!-- 
+# h1
+###### h6
+**bold**
+*italic*
+_underline_
+
+| key | value |
+|-|-|
+| name | 'bob' |
+
+
+- listt
+- items
+
+1. numberd
+1. list
+1. all ones - auttomatic numbering
+Feattures for *future* development
+ -->
 ```md
 The main features in this project are:
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
+Future Development Features
+With more time, we would like to have made the following enhancements to our project:
+Add logic for customers to update their own data
+Add logic for employers to use the application to update food and beverage items, and order and customer data
+Add logic for the application to handle multiple restaurants
+Add logic for phone and delivery orders
+Capture more field values in each database table
+Check for username already existing before allowing a new username and password to be saved
+Add “forgot password” logic
+Add “Go to Homepage” button from order page
+
 ```
 
 ## How-to-Contribute
