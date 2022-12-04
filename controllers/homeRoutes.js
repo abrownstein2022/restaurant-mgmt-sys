@@ -28,8 +28,6 @@ const dateFns = require('date-fns')
 
 // = Plain white
 
-
-
 // empty routes are treated as an empty path (/) and typically used to show the homepage
 // localhost:3001
 // same as localhost:3001/
@@ -38,7 +36,7 @@ const dateFns = require('date-fns')
 // they will be visible to anyone
 // no "withAuth" needed
 //&                                                                                                                   
-//$ root route of server '/' should render welcome page
+//$ root route of server '/' should render welcome page that only shows login and register links
 router.get('/', async (req, res) => {
   console.log("path: '/' => rendering 'welcome.handlebars'")
 
@@ -47,6 +45,18 @@ router.get('/', async (req, res) => {
   });
 
 });
+
+// alexis added 12/3/22 to be able to route back to homepage (landing page after login) from other pages
+router.get('/homepage', withAuth, async (req, res) => {
+  console.log("path: '/' => rendering 'homepage.handlebars'")
+
+  res.render('homepage', { 
+    layout: false,
+    logged_in: req.session.logged_in 
+  });
+
+});
+//end alexis 12/3/22
 
 //&                                                                                                                   
 //&this open handlebars (html) page for the menu for ordering
