@@ -30,7 +30,6 @@ router.post('/', async (req, res) => {
   }
 });
 
-
 /* 
 {
 	"customer_first_name":"abcdef",
@@ -39,7 +38,6 @@ router.post('/', async (req, res) => {
 	"customer_password":""
 }
 */
-
 //Post route for login
 // POST localhost:3001/api/users/login
 router.post('/register', async (req, res) => {
@@ -82,12 +80,7 @@ router.post('/register', async (req, res) => {
     4xx => user input errror
     5xx => server error
     */
-
-
-
-
-
-
+  
     // always return something, at least a status
     // res.status(200).json('ayo')
     // let res = {}
@@ -101,8 +94,6 @@ router.post('/register', async (req, res) => {
     res.render('errorpage', { error: err?.message ?? err.toString() })
   }
 });
-
-
 
 //Post route for login
 // POST localhost:3001/api/users/login
@@ -162,13 +153,9 @@ router.post("/login", async (req, res) => {
   }
 });
 
-
-
-
 //Post route for logging out
 // this route is triggered from a link element, which always send GET requests
 router.get("/logout", (req, res) => {
-
     req.session.destroy(() => {
       res.status(204).end();
     });
