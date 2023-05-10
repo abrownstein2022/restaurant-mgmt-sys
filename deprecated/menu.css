@@ -1,0 +1,25 @@
+.title {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  margin: 10px;
+  color: green;
+  background-color: black;
+}
+
+#main {
+  width: 500px;
+  background-color:	#F8F8F8;
+  border: 1px solid black;
+  z-index: 20;
+  position: fixed;
+  right: 100px;
+  top: 100px;
+  height: 800px;
+}
+
+#add {
+  display: flex;
+  justify-content: space-around;
+}
+
