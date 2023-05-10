@@ -1,7 +1,7 @@
 # Restaurant Management System (Interactive Full-Stack Project)
 
-**Link to demo in Heroku:**
-https://proj2-restaurant-mgmt-sys.herokuapp.com
+<!--**Link to demo in Heroku:**-->
+<!--https://proj2-restaurant-mgmt-sys.herokuapp.com-->
 
 ![license](https://img.shields.io/badge/license-MIT-black)
 
@@ -36,7 +36,7 @@ The application can be used by a restaurant to allow customers to log in and pla
 • Have a folder structure that meets the MVC paradigm.
 • Include authentication (express-session and cookies).  This project includes register and login pages for customers to login to place online orders from our restaurant "Group 5's Burgers and Fries".
 • Protect API keys and sensitive information with environment variables.
-• Be deployed using Heroku (with data).
+<!--• Be deployed using Heroku (with data).-->
 • Have a polished UI.
 • Be responsive.  We changed formatting in the handlebars files and tested to ensure the design works on smaller screens, like mobile devices.
 • Be interactive (accept and respond to user input).
@@ -81,10 +81,10 @@ THEN I am logged out securely from the application
 <!-- audience is other developers -->
 **Note: In package.json, peer dependencies already exist for dotenv, mysql2, sequelize, nodemon and dates-fns so you do not have to install these packages. You should have mysql already installed on your computer.**
 
-1. Clone this GitHub repo https://github.com/abrownstein2022/proj2-restaurant-mgmt-sys:
+1. Clone this GitHub repo https://github.com/abrownstein2022/restaurant-mgmt-sys
 <!-- Check out the gh cli tool from github -->
 ```bash
-$ gh repo clone /abrownstein2022/proj2-restaurant-mgmt-sys
+$ gh repo clone /abrownstein2022/restaurant-mgmt-sys
 ```
 2. From the terminal, install npm:
 
@@ -243,5 +243,5 @@ We can be reached at alexis@drdatabase.com.
 
 This GitHub repo can be found at:
   
-https://github.com/abrownstein2022/proj2-restaurant-mgmt-sys
+https://github.com/abrownstein2022/restaurant-mgmt-sys
  
